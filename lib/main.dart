@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mkcl/home/HomeScreen.dart';
+import 'package:mkcl/home/components/appbar_mkcl.dart';
+import 'package:mkcl/splashscreen.dart';
 
-import 'screens/LoginScreen.dart';
+import 'login/LoginScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'mkcl Application',
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: MyHomePage(),
     );
   }
 }

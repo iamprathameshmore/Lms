@@ -1,26 +1,28 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:mkcl/login/LoginScreen.dart';
+import 'package:mkcl/screens/auth/LoginScreen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class MyHomePage extends StatefulWidget {
+class SplashScreeen extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SplashScreenState extends State<SplashScreeen> {
   @override
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => LoginScreen())));
+        const Duration(seconds: 3),
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const LoginScreen())));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(bottom: 25),
+        padding: const EdgeInsets.only(bottom: 25),
         child: Container(
             height: 50,
             alignment: Alignment.center,
@@ -44,13 +46,15 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text(
                   'Created by',
-                  style: TextStyle(
+                  style: GoogleFonts.workSans(
                     color: Colors.grey,
                   ),
                 ),
                 Text(
                   'iamprathameshmore © 2024',
-                  style: TextStyle(color: Colors.grey),
+                  style: GoogleFonts.workSans(
+                    color: Colors.grey,
+                  ),
                 ),
               ],
             )),

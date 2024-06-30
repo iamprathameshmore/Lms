@@ -1,24 +1,26 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mkcl/home/HomeScreen.dart';
-import 'package:mkcl/home/components/appbar_mkcl.dart';
-import 'package:mkcl/splashscreen.dart';
+import 'package:mkcl/screens/profile/profile.dart';
+import 'package:mkcl/screens/splash/splashscreen.dart';
 
-import 'login/LoginScreen.dart';
-
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => MyApp(), // Wrap your app
+      ),
+    );
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'mkcl Application',
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      // theme: ThemeData.light(),
+      // darkTheme: ThemeData.dark(),
+      home: SplashScreeen(),
     );
   }
 }

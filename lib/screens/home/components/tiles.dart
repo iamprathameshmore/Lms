@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Tiles_blue extends StatelessWidget {
   const Tiles_blue({super.key});
@@ -9,13 +11,13 @@ class Tiles_blue extends StatelessWidget {
         itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: Container(
-              height: 230,
+              // height: 230,
               width: double.infinity,
               decoration: BoxDecoration(
                   color: Colors.blueAccent.shade100,
-                  border: Border.all(color: Colors.black12, width: 2),
+                  border: Border.all(color: Colors.white, width: 1),
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
@@ -25,7 +27,7 @@ class Tiles_blue extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ActionChip(
+                        Chip(
                           label: Text(
                             'Active',
                             style: TextStyle(color: Colors.black),
@@ -33,8 +35,12 @@ class Tiles_blue extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50)),
                         ),
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
+                        Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(50)),
                           child: Icon(Icons.share_outlined),
                         )
                       ],
@@ -46,10 +52,14 @@ class Tiles_blue extends StatelessWidget {
                       children: [
                         Text(
                           "Hello, this is my 1st Batch about mkcl introduction.",
-                          style: TextStyle(
+                          style: GoogleFonts.workSans(
                               fontSize: 25,
+                              height: 1,
                               fontWeight: FontWeight.w600,
                               color: Colors.black),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Row(
                           children: [
@@ -73,55 +83,56 @@ class Tiles_blue extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 10),
+                      horizontal: 17,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.white),
+                          child: Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://avatars.githubusercontent.com/u/91453437?v=4'),
+                            ),
+                          ),
+                        ),
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.white),
-                              child: Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: CircleAvatar(
-                                  backgroundImage: NetworkImage(
-                                      'https://avatars.githubusercontent.com/u/91453437?v=4'),
-                                ),
-                              ),
+                            Icon(
+                              Icons.person_outline,
+                              size: 25,
+                              color: Colors.black45,
                             ),
                             SizedBox(
-                              width: 7,
+                              width: 5,
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Mr.Prathamesh More",
-                                  style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 1),
-                                  child: Text(
-                                    "Flutter Devloper , Amt",
-                                    style: TextStyle(
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              '17',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black45),
                             )
                           ],
-                        ),
+                        )
                       ],
                     ),
+                  ),
+                  SizedBox(
+                    height: 10,
                   )
                 ],
               ),

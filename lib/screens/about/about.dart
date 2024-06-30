@@ -13,13 +13,13 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text(
-          'About us',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   title: Text(
+      //     'About us',
+      //     style: TextStyle(fontWeight: FontWeight.bold),
+      //   ),
+      // ),
       body: Markdown(
         data: '''
 

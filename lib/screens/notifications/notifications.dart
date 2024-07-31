@@ -18,60 +18,50 @@ class _NotificationsState extends State<Notifications> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         appBar: AppBar(
-            surfaceTintColor: Colors.white,
-            backgroundColor: Colors.white,
-            title: Text(
-              'Notifications',
-              style:
-                  GoogleFonts.workSans(fontWeight: FontWeight.w600, height: 1),
-            ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: IconButton(
-                    onPressed: () {}, icon: Icon(Icons.filter_list_outlined)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 0),
-                child: IconButton(
-                    onPressed: () {}, icon: Icon(Icons.more_vert_rounded)),
-              ),
-            ],
-            bottom: TabBar(
-              tabAlignment: TabAlignment.start,
-              isScrollable: true,
-              indicatorColor: Colors.amber,
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(width: 1), // Creates border
-                  color: Colors.black),
-              indicatorPadding: EdgeInsets.all(5),
-              dividerColor: Colors.grey.shade300,
-              labelColor: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 8),
-              tabs: [
-                Tab(
-                  // text: 'All',
-                  child: Text('All'),
-                ),
-                Tab(
-                  child: Text('Studnets'),
-                ),
-                Tab(
-                  child: Text('My Self'),
-                ),
-              ],
-            )),
-        body: TabBarView(
-          children: [
-            NotiList(),
-            NotiList(),
-            NotiList(),
-          ],
+          surfaceTintColor: Theme.of(context).colorScheme.primary,
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          title: Text(
+            'Notifications',
+            style: GoogleFonts.workSans(fontWeight: FontWeight.w600, height: 1),
+          ),
+          // bottom: TabBar(
+          //   tabAlignment: TabAlignment.start,
+          //   isScrollable: true,
+          //   // indicatorColor: Colors.amber,
+          //   indicatorSize: TabBarIndicatorSize.tab,
+          //   indicator: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(50),
+          //       border: Border.all(width: 1), // Creates border
+          //       color: Theme.of(context).colorScheme.secondary),
+          //   indicatorPadding: EdgeInsets.all(5),
+          //   dividerColor: Colors.grey,
+          //   dividerHeight: 1,
+          //   labelColor: Theme.of(context).colorScheme.primary,
+          //   padding: EdgeInsets.only(bottom: 5, left: 5),
+          //   tabs: [
+          //     Tab(
+          //       // text: 'All',
+          //       child: Text('All'),
+          //     ),
+          //     Tab(
+          //       child: Text('Studnets'),
+          //     ),
+          //     Tab(
+          //       child: Text('My Self'),
+          //     ),
+          //   ],
+          // )
         ),
+        // body: TabBarView(
+        //   children: [
+        //     NotiList(),
+        //     NotiList(),
+        //     NotiList(),
+        //   ],
+        // ),
+        body: NotiList(),
       ),
     );
   }

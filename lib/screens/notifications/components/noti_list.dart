@@ -15,59 +15,64 @@ class _NotiListState extends State<NotiList> {
       itemCount: 100,
       itemBuilder: (BuildContext context, int index) {
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Container(
             width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  'My Notification',
-                  style: GoogleFonts.workSans(
-                      fontSize: 20, fontWeight: FontWeight.w500),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  'Amet magna elit adipisicing pariatur ipsum exercitation dolor. Ad eiusmod anim qui labore duis Lorem eu cillum ex. Occaecat ut ullamco ea veniam excepteur anim fugiat quis.',
-                  style: GoogleFonts.workSans(
-                    fontSize: 15,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Theme.of(context).colorScheme.secondaryContainer),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 5,
                   ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 0),
-                      child: Icon(
-                        Icons.date_range_rounded,
-                        size: 15,
+                  Text(
+                    'My Notification',
+                    style: GoogleFonts.workSans(
+                        fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    'Amet magna elit adipisicing pariatur ipsum exercitation dolor. Ad eiusmod anim qui labore duis Lorem eu cillum ex. Occaecat ut ullamco ea veniam excepteur anim fugiat quis.',
+                    style: GoogleFonts.workSans(
+                      fontSize: 15,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0),
+                        child: Icon(
+                          Icons.date_range_rounded,
+                          size: 15,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      '16 Feb - 9.00am',
-                      style: GoogleFonts.workSans(
-                          fontSize: 13, fontWeight: FontWeight.w400),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Divider()
-              ],
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        '16 Feb - 9.00am',
+                        style: GoogleFonts.workSans(
+                            fontSize: 13, fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                ],
+              ),
             ),
           ),
         );

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,156 +15,105 @@ class _Std_listState extends State<Std_list> {
     return ListView.builder(
         itemCount: 10,
         itemBuilder: (BuildContext, int) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+          return InkWell(
+            onDoubleTap: () {},
+            onLongPress: () {
+              if (kDebugMode) {
+                print('long press');
+              }
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 2),
+              child: Container(
+                decoration: BoxDecoration(
+                    // color: Theme.of(context).colorScheme.secondaryContainer,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Column(
                   children: [
                     SizedBox(
-                      width: 10,
+                      height: 10,
                     ),
-                    Column(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Row(
-                          // crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Prathamesh More',
-                              style: GoogleFonts.workSans(
-                                  fontSize: 20, fontWeight: FontWeight.w500),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 2.5),
-                              child: Text(
-                                '●',
-                                style: GoogleFonts.workSans(
-                                    fontSize: 15, color: Colors.grey),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 2),
-                              child: Text(
-                                '(His/Him)',
-                                style: GoogleFonts.workSans(
-                                    fontSize: 15, color: Colors.grey),
-                              ),
-                            ),
-                          ],
+                        SizedBox(
+                          width: 15,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 2),
-                              child: Icon(
-                                Icons.person_outline,
-                                size: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              '21be0711',
-                              style: GoogleFonts.workSans(fontSize: 15),
-                            ),
-                          ],
+                        Container(
+                          height: 60,
+                          width: 60,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Theme.of(context).colorScheme.secondary),
+                          child: CircleAvatar(
+                            radius: 28,
+                          ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
+                              // crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                Text(
+                                  'Prathamesh More',
+                                  style: GoogleFonts.workSans(
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 2),
-                                  child: Icon(
-                                    Icons.phone_outlined,
-                                    size: 15,
+                                  padding: const EdgeInsets.only(top: 2.5),
+                                  child: Text(
+                                    '●',
+                                    style: GoogleFonts.workSans(
+                                        fontSize: 12, color: Colors.grey),
                                   ),
                                 ),
                                 SizedBox(
                                   width: 5,
                                 ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 2),
+                                  child: Text(
+                                    '(His/Him)',
+                                    style: GoogleFonts.workSans(
+                                        fontSize: 12, color: Colors.grey),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
                                 Text(
-                                  '+91 8421334187',
-                                  style: GoogleFonts.workSans(fontSize: 15),
+                                  '21be0711',
+                                  style: GoogleFonts.workSans(fontSize: 13),
                                 ),
                               ],
                             ),
                             SizedBox(
-                              width: 10,
-                            ),
-                            // Divider(),
+                              height: 5,
+                            )
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 2),
-                              child: Icon(
-                                Icons.mail_outline,
-                                size: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              'iamprathameshmore07@gmail.com',
-                              style: GoogleFonts.workSans(fontSize: 15),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 2),
-                              child: Icon(
-                                Icons.location_on_outlined,
-                                size: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              'Amravati, Maha, 444601.',
-                              style: GoogleFonts.workSans(fontSize: 15),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 5,
-                        )
                       ],
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Divider(
-                  height: 1,
-                  color: Colors.grey.shade300,
-                )
-              ],
+              ),
             ),
           );
         });

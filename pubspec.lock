@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  contextualactionbar:
+    dependency: "direct main"
+    description:
+      name: contextualactionbar
+      sha256: "7ce810333dc5408060f158bb9661ceb1c20be051ed176ab048faccf4e4116772"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   crypto:
     dependency: transitive
     description:
@@ -74,13 +82,21 @@ packages:
     source: hosted
     version: "1.2.0"
   device_preview:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: device_preview
       sha256: a694acdd3894b4c7d600f4ee413afc4ff917f76026b97ab06575fe886429ef19
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  equatable:
+    dependency: "direct main"
+    description:
+      name: equatable
+      sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -111,7 +127,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_lints:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_lints
       sha256: "9e8c3858111da373efc5aa341de011d9bd23e2c5c5e0c62bccf32438e192d7b1"
@@ -124,7 +140,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_markdown:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_markdown
       sha256: "85cc6f7daeae537844c92e2d56e2aff61b00095f8f77913b529ea4be12fc45ea"
@@ -132,7 +148,7 @@ packages:
     source: hosted
     version: "0.7.2+1"
   flutter_otp_text_field:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_otp_text_field
       sha256: c51dc7ce1a6fd9430580decda1104643f14703819e351c4a3074c9fe3d24cdbc
@@ -158,7 +174,7 @@ packages:
     source: hosted
     version: "2.4.1"
   google_fonts:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: google_fonts
       sha256: b1ac0fe2832c9cc95e5e88b57d627c5e68c223b9657f4b96e1487aa9098c7b82
@@ -166,7 +182,7 @@ packages:
     source: hosted
     version: "6.2.1"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: "761a297c042deedc1ffbb156d6e2af13886bb305c2a343a4d972504cd67dd938"
@@ -342,7 +358,7 @@ packages:
     source: hosted
     version: "2.1.8"
   provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: provider
       sha256: c8a055ee5ce3fd98d6fc872478b03823ffdb448699c6ebdbbc71d59b596fd48c

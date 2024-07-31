@@ -4,6 +4,7 @@ import 'package:mkcl/screens/contact/contact.dart';
 import 'package:mkcl/screens/home/HomeScreen.dart';
 import 'package:mkcl/screens/notifications/notifications.dart';
 import 'package:mkcl/screens/profile/profile.dart';
+import 'package:mkcl/screens/students/components/appbar_test.dart';
 import 'package:mkcl/screens/students/students.dart';
 
 class BottomNav extends StatefulWidget {
@@ -17,9 +18,9 @@ class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    Students(),
+    AppbarTest(),
     Notifications(),
     ProfileScreen()
   ];
@@ -37,13 +38,14 @@ class _BottomNavState extends State<BottomNav> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         enableFeedback: false,
-        selectedLabelStyle: TextStyle(color: Colors.grey),
-        selectedIconTheme: IconThemeData(color: Colors.black),
+        // selectedLabelStyle: TextStyle(color: Colors.grey),
+        selectedIconTheme:
+            IconThemeData(color: Theme.of(context).colorScheme.secondary),
         unselectedIconTheme: IconThemeData(color: Colors.grey),
         unselectedItemColor: Colors.black,
         items: const <BottomNavigationBarItem>[

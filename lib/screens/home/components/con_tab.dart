@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mkcl/screens/home/components/tiles.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Con_Tabs extends StatefulWidget {
   const Con_Tabs({super.key});

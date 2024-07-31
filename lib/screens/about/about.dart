@@ -12,7 +12,7 @@ class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       // appBar: AppBar(
       //   backgroundColor: Colors.white,
       //   title: Text(

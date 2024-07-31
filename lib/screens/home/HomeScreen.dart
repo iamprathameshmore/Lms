@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mkcl/screens/home/add_batches/add_batches.dart';
 
 import 'package:mkcl/screens/home/components/con_tab.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mkcl/screens/home/components/searchbar.dart';
 import 'package:mkcl/screens/home/components/tiles.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,15 +20,15 @@ class _HomescreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: SafeArea(
         child: DefaultTabController(
           length: 7,
           child: Scaffold(
-            backgroundColor: Colors.white,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             appBar: AppBar(
-              backgroundColor: Colors.white,
-              surfaceTintColor: Colors.white,
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              surfaceTintColor: Theme.of(context).colorScheme.primary,
 
               // elevation: 10,
 
@@ -37,9 +39,24 @@ class _HomescreenState extends State<HomeScreen> {
               ),
 
               actions: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded)),
                 IconButton(
-                    onPressed: () {}, icon: Icon(Icons.add_circle_outline)),
+                  onPressed: () {
+                    // method to show the search bar
+                    showSearch(
+                        context: context,
+                        // delegate to customize the search bar
+                        delegate: CustomSearchDelegate());
+                  },
+                  icon: const Icon(Icons.search),
+                ),
+                IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddBatches()));
+                    },
+                    icon: Icon(Icons.add_circle_outline)),
                 IconButton(
                     onPressed: () {}, icon: Icon(Icons.more_vert_rounded)),
               ],
@@ -47,22 +64,24 @@ class _HomescreenState extends State<HomeScreen> {
               bottom: TabBar(
                 indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(13), // Creates border
-                    color: Colors.black),
+                    color: Theme.of(context).colorScheme.secondary),
                 indicatorSize: TabBarIndicatorSize.tab,
 
-                padding: EdgeInsets.only(left: 10, right: 10, bottom: 0),
-                // tabAlignment: TabAlignment.start,
+                padding: EdgeInsets.only(left: 10, right: 10, bottom: 5),
+
+                tabAlignment: TabAlignment.fill,
                 // isScrollable: true,
-                unselectedLabelColor: Colors.black,
-                labelColor: Colors.white,
+                unselectedLabelColor: Theme.of(context).colorScheme.secondary,
+                labelColor: Theme.of(context).colorScheme.primary,
 
                 indicatorPadding:
-                    EdgeInsets.symmetric(horizontal: 3, vertical: 5),
+                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                 // indicatorWeight: 50,
                 labelPadding: EdgeInsets.symmetric(horizontal: 8),
-                dividerHeight: 1,
 
-                dividerColor: Colors.grey.shade300,
+                dividerHeight: 0,
+
+                dividerColor: Colors.grey.shade500,
                 tabs: [
                   Tab(
                     // icon: Icon(Icons.directions_car),

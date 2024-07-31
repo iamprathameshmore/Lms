@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:mkcl/screens/about/about.dart';
+import 'package:mkcl/screens/profile/settings/settings.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -14,17 +15,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        surfaceTintColor: Theme.of(context).colorScheme.primary,
         title: Text(
           'Profile',
-          style: GoogleFonts.workSans(fontWeight: FontWeight.w600, height: 1),
+          style: GoogleFonts.workSans(
+              fontWeight: FontWeight.w600,
+              height: 1,
+              color: Theme.of(context).colorScheme.secondary),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.share_outlined)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.settings_outlined))
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.share_outlined,
+                color: Theme.of(context).colorScheme.secondary,
+              )),
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Settings()));
+              },
+              icon: Icon(
+                Icons.settings_outlined,
+                color: Theme.of(context).colorScheme.secondary,
+              )),
+          SizedBox(
+            width: 5,
+          )
         ],
       ),
       body: Container(
@@ -58,7 +78,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Text(
                         'Prathamesh More',
                         style: GoogleFonts.workSans(
-                            fontSize: 20, fontWeight: FontWeight.w600),
+                            color: Theme.of(context).colorScheme.secondary,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
                       ),
                       Text(
                         'iamprathameshmore',
@@ -107,9 +129,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Text(
                     '888888888',
                     style: GoogleFonts.workSans(
-                        color: Colors.black,
+                        color: Theme.of(context).colorScheme.secondary,
                         fontSize: 15,
-                        fontWeight: FontWeight.w600),
+                        fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
@@ -128,9 +150,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Text(
                     'iamprathameshmore07@gmail.com',
                     style: GoogleFonts.workSans(
-                        color: Colors.black,
+                        color: Theme.of(context).colorScheme.secondary,
                         fontSize: 15,
-                        fontWeight: FontWeight.w600),
+                        fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
@@ -150,9 +172,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     TextSpan(
                         text: '453',
                         style: GoogleFonts.workSans(
-                            color: Colors.black,
+                            color: Theme.of(context).colorScheme.secondary,
                             fontSize: 15,
-                            fontWeight: FontWeight.w700),
+                            fontWeight: FontWeight.w500),
                         children: [
                           TextSpan(
                             text: ' Students',
@@ -173,6 +195,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               indent: 15,
               height: 1,
               endIndent: 15,
+              color: Colors.grey,
             ),
             SizedBox(
               height: 15,
@@ -185,7 +208,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Text(
                   ' About',
                   style: GoogleFonts.workSans(
-                      color: Colors.black,
+                      color: Theme.of(context).colorScheme.secondary,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
